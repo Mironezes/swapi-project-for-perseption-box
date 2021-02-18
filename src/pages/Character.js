@@ -1,10 +1,12 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
-import { charactersContext } from '../context/characters/charactersContext'
+import React, {useContext, useEffect, useState} from 'react'
+import {NavLink} from 'react-router-dom'
+import {charactersContext} from '../context/characters/charactersContext'
 import {Box, Grid, Container, Breadcrumbs  } from '@material-ui/core/'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronLeft, faHeart as Liked } from '@fortawesome/free-solid-svg-icons'
-import { faHeart as LikeIt } from '@fortawesome/free-regular-svg-icons'
+import {FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faChevronLeft, faHeart as Liked} from '@fortawesome/free-solid-svg-icons'
+import {faHeart as LikeIt} from '@fortawesome/free-regular-svg-icons'
+import {CharacterImage} from '../components/CharacterImage'
+
 
 export const Character = ({match}) => {
 
@@ -18,8 +20,6 @@ export const Character = ({match}) => {
       cleanUpCharacterData()
     }
   }, [])
-
-
 
   const [like, setLiked] = useState(false)
 
@@ -49,12 +49,10 @@ export const Character = ({match}) => {
       localStorage.setItem('likedList', JSON.stringify(updatedList))
     }
   }
-
   
   useEffect(() => {
     isCharacterInStorage()
   })
-
 
   return (
     <Box component={'section'} className={'content-area character'}>
@@ -72,10 +70,9 @@ export const Character = ({match}) => {
           justify="space-between"
           className={'content-area-inner'}
         >
-
           <Grid item sm={4} xs={12} className="character-info featured">
             <div className={'image'}>
-
+                <CharacterImage character={character} />
             </div>
             <div className={'like-it'} onClick={settingLikeStatus}>
                 {like
