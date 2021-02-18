@@ -1,4 +1,4 @@
-# Getting Started with GitHub Searcher Project
+# Getting Started with SWAPI React Project
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
