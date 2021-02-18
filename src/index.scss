@@ -1,0 +1,276 @@
+// Vars
+$color-highlight: #FFE81F;
+$color-base: #000000;
+$color-white: #fff;
+$page-bg: $color-base;
+
+
+
+// Base 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto';
+  font-weight: 400;
+  background-color: $page-bg;
+}
+
+.page-title {
+  margin-top: 0;
+  font-size: 2.25rem;
+  color: $color-highlight;
+}
+
+
+// Loader 
+.loader {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+
+
+// Header 
+.header {
+  & {
+    padding-top: 35px;
+    padding-bottom: 50px;
+    font-size: 1.1rem;
+  }
+  &-logo a {
+    font-size: 2rem; 
+    text-decoration: none;
+    color: $color-white;
+  }
+  &-user {
+    position: relative;
+    display: flex;  
+    align-items: center;
+    color: $color-white;  
+  }
+  &-user button {
+    margin: 0 10px;
+    padding: 8px 15px;
+    align-items: center;
+    display: flex;
+    font-size: unset;
+    font-weight: 600;
+    color: $color-base;
+    background-color: $color-highlight;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: inherit;
+    transition: background-color .3s ease-out;
+  }
+  &-user button:hover {
+    background-color: #e8d000;
+  }
+  &-user button svg {
+    margin-left: 5px;
+    font-size: 1.4rem;
+  }
+  &-user button a {
+    color: unset;
+    text-decoration: none;
+  }
+  &-menu {
+    position: relative;
+  }
+  &-menu a {
+    margin-right: 35px;
+    font-size: 1.15rem;
+    color: $color-white;
+    text-decoration: none;
+    padding-bottom: 4px;
+    border-bottom: 1px solid $color-white;
+  }
+  &-menu a.active {
+    font-weight: 600;
+    border-bottom-width: 2px;
+  }
+  &-menu a:last-of-type {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .header {
+    &-user {
+      margin: 0 auto;
+      margin-bottom: 50px;
+    }
+    &-menu {
+      margin: 0 auto;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    &-logo {
+      width: 100%;
+      margin-bottom: 35px;
+      text-align: center;
+    }
+  }
+}
+
+
+// Main container 
+.page-content {
+  min-height: calc(100vh - 250px);
+  margin-bottom: 25px;
+}
+
+.content-area {
+  & {
+    // 
+  }
+  &-inner {
+    background: $color-white;
+    border-radius: 4px;
+    padding: 25px;
+  }
+}
+
+
+// Search Panel
+.search-panel {
+  margin-bottom: 35px;
+}
+
+.search-panel .MuiInputBase-root  {
+  background: $color-white;
+}
+
+
+
+// Character Card 
+.character-card {
+  & span {
+    display: block;
+    margin-bottom: 8px;
+  }
+  & span:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &__button {
+    color: $color-white;
+    margin-left: 6px;
+    margin-bottom: 15px;
+    padding: 10px 25px;
+    background: $color-base;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all .3s ease-out;
+  }
+  &__button:hover {
+    opacity: .8;
+  }
+}
+
+
+
+// Breadcrumbs
+.breadcrumbs {
+  & {
+    padding-bottom: 25px;
+  }
+  & * {
+    color: $color-white;
+  }
+}
+
+.breadcrumbs-item,
+.breadcrumbs-item:hover,
+.breadcrumbs-item:active {
+  color: $color-white;
+  text-decoration: unset;
+}
+
+
+
+// Character Info 
+.character {
+  & .content-area-inner {
+    padding: 25px 10px;
+  }
+}
+
+.character-info {
+  & {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+  }
+  & h2, & h3 {
+    margin-top: 0;
+  }
+  & span {
+    margin-bottom: 15px;
+  }
+  &-category:first-of-type {
+    margin-bottom: 25px;
+  }
+  &-category li {
+    margin-bottom: 12px;
+  }
+  &-category li:last-of-type {
+    margin-bottom: 0;
+  }
+  & .image {
+    width: 100%;
+    height: 100%;
+    background: #ccc;
+  }
+
+  & .like-it {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 30px);
+    height: 50px;
+    left: 15px;
+    bottom: 0;
+    color: $color-white;
+    background: $color-base;
+    z-index: 2;
+    cursor: pointer;
+    transition: all .3s ease-out;
+  }
+  & .like-it:hover {
+    opacity: .8;
+  }
+}
+
+
+// Profile
+.profile {
+  &-info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
+  &-info span {
+    margin-bottom: 10px;
+  }
+}
+
+
+
+// Footer 
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 50px;
+    color: $color-highlight;
+  }
+//
