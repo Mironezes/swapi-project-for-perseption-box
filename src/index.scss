@@ -3,6 +3,7 @@ $color-highlight: #FFE81F;
 $color-highlight-hover: #e8d000;
 $color-base: #000000;
 $color-white: #fff;
+$color-grey: #f2f2f2;
 $page-bg: $color-base;
 
 
@@ -12,23 +13,30 @@ $page-bg: $color-base;
   outline: none;
 }
 
-button:hover {
-  cursor: pointer;
-}
-
 body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto';
+  font-size: 16px;
   font-weight: 400;
   background-color: $page-bg;
 }
 
 .page-title {
   margin-top: 0;
-  font-size: 2.25rem;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
   color: $color-highlight;
 }
+
+button:hover {
+  cursor: pointer;
+}
+
+ul {
+  padding-left: 30px;
+}
+
 
 
 // Loader 
@@ -48,9 +56,11 @@ body {
     font-size: 1.1rem;
   }
   &-logo a {
-    font-size: 2rem; 
+    font-size: 2.25rem; 
+    font-weight: 800;
     text-decoration: none;
     color: $color-white;
+    text-transform: uppercase;
   }
   &-user {
     position: relative;
@@ -59,8 +69,7 @@ body {
     color: $color-white;  
   }
   &-user button {
-    margin: 0 10px;
-    padding: 8px 15px;
+    padding: 4px 15px;
     align-items: center;
     display: flex;
     font-size: unset;
@@ -70,7 +79,7 @@ body {
     border: none;
     border-radius: 4px;
     outline: inherit;
-    transition: background-color .3s ease-out;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms
   }
   &-user button:hover {
     background-color: $color-highlight-hover;
@@ -88,7 +97,7 @@ body {
   }
   &-menu a {
     margin-right: 35px;
-    font-size: 1.15rem;
+    font-size: 1.35rem;
     color: $color-white;
     text-decoration: none;
     padding-bottom: 4px;
@@ -103,14 +112,14 @@ body {
   }
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 599px) {
   .header {
+    &-menu,
     &-user {
       margin: 0 auto;
-      margin-bottom: 50px;
     }
     &-menu {
-      margin: 0 auto;
+      margin-bottom: 40px;
     }
   }
 }
@@ -133,9 +142,6 @@ body {
 }
 
 .content-area {
-  & {
-    // 
-  }
   &-inner {
     background: $color-white;
     border-radius: 4px;
@@ -148,11 +154,6 @@ body {
 .search-panel {
   margin-bottom: 35px;
 }
-
-.search-panel .MuiInputBase-root  {
-  background: $color-white;
-}
-
 
 
 // Character Card 
@@ -173,10 +174,55 @@ body {
     background: $color-base;
     border-radius: 4px;
     text-decoration: none;
-    transition: all .3s ease-out;
+    transition: all 250ms ease-out;
   }
   &__button:hover {
     opacity: .8;
+  }
+}
+
+
+
+// Comment form
+#character-comment-form {
+  & input::placeholder {
+    font-size: 10px !important;
+  }
+  & button {
+    color: $color-base;
+    background-color: $color-highlight;
+    box-shadow: unset;
+  }
+  & button:hover {
+    background-color: $color-highlight-hover;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  #character-comment-form {
+    margin-bottom: 50px;
+  }
+}
+
+
+
+// Comments block
+.comment-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  padding: 15px;
+  zoom: .95;
+  background-color: $color-grey !important;
+  & small {
+    margin-bottom: 10px;
+  }
+  & strong {
+    margin-bottom: 20px;
+  }
+  & p {
+    margin: 0;
   }
 }
 
@@ -208,6 +254,7 @@ body {
   }
 }
 
+
 .character-info {
   & {
     position: relative;
@@ -234,7 +281,7 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    background: #ccc;
+    background: $color-grey;
   }
   & .image button {
     position: absolute;
@@ -278,6 +325,55 @@ body {
   }
 }
 
+@media screen and (max-width: 425px) {
+  .character-info {
+    & span {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .character-info {
+    &.featured {
+      min-height: 225px;
+      margin-bottom: 35px;
+    }
+    &.main  {
+      margin-bottom: 25px;
+    }
+  } 
+}
+
+
+
+// Character Form
+.character-comments {
+  &-block {
+    position: relative;
+    display: flex;
+    padding-bottom: 50px;
+  }
+  &-form,
+  &-list {
+    position: relative;
+    padding: 0 15px;
+  }  
+  &-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  &-form form > div:nth-of-type(1) {
+    margin-bottom: 25px;
+  }
+  &-form form > div:nth-of-type(2) {
+    margin-bottom: 35px;
+  }
+}
+
+
+
 
 // Profile
 .profile {
@@ -303,4 +399,4 @@ body {
     padding-bottom: 50px;
     color: $color-highlight;
   }
-//
+

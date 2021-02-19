@@ -3,7 +3,7 @@ import { userContext } from '../context/user/userContext'
 import {NavLink, Link} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook } from '@fortawesome/free-brands-svg-icons'
-import {Box, Grid, Container } from '@material-ui/core/'
+import {Box, Grid, Container, Button } from '@material-ui/core/'
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 
 
@@ -38,14 +38,14 @@ export const Navigation = () =>  {
 
             <div className={'header-user'}>
               {isAuthorized
-                ? <button onClick={FacebookLogOut}>Log out</button>
+                ? <Button onClick={FacebookLogOut}>Log out</Button>
                 : <FacebookLogin
                   appId="183265709827390"
                   fields="name,email,picture"
                   callback={responseFacebook}
                   public_profile
                   render={renderProps => (
-                    <button onClick={renderProps.onClick}>Sign in via  <FontAwesomeIcon icon={faFacebook} /></button>
+                    <Button onClick={renderProps.onClick}>Sign in via  <FontAwesomeIcon icon={faFacebook} /></Button>
                   )}
                 />
 

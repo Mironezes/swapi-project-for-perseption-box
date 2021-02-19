@@ -37,11 +37,13 @@ export const Profile = () => {
             <div className={'profile-liked-list'}>
               <strong>List of liked by you SW characters:</strong>
               <ul>
-                {likedList.map((item, index) => 
-                  <li key={index}>
-                    <span>{item.name}</span> <Link to={item.uri}>(link)</Link>
-                  </li>
-                )}
+                { likedList.length > 0 
+                  ? likedList.map((item, index) => 
+                      <li key={index}>
+                        <span>{item.name}</span> <Link to={item.uri}>(link)</Link>
+                      </li>)
+                  : <li>List is empty</li>
+                }
               </ul>
             </div>
           </Grid>
